@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load bootstrap_tags %}
+
+{% block content %}
+    <h2>Success!</h2>
+    <p>You are logged in as {{ user.email }} </p>
+    
+        {% if request.user.is_authenticated %}
+        <img src="{{ MEDIA_URL }}{{ request.user.profile.image }}" style="width:100px; height: 100px; background-color: #12ABB2; color: #ffffff;" class="img-circle">
+        {% endif %}
+        
+{% endblock %}
